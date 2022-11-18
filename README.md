@@ -14,6 +14,10 @@
   - [tuple](#tuple)
   - [any](#any)
   - [unknown](#unknown)
+  - [never](#never)
+  - [void](#void)
+  - [타입 시스템](#타입-시스템)
+    - [타입 스크립트의 타입 시스템](#타입-스크립트의-타입-시스템)
 ___
 ## Type Annotation
 > [type_annotation.ts](https://github.com/FDongFDong/typescript_practice/blob/main/type_annotation/test.ts)
@@ -123,7 +127,7 @@ ___
 - 순서, 타입, 길이가 정해져 있다.
 ___
 ## any
-> [any](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/any.ts)
+> [any.ts](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/any.ts)
 
 - 어떤 타입이여도 상관이 없다.
 - 최대한 쓰지 않아야한다.
@@ -135,10 +139,39 @@ ___
 ___
 
 ## unknown
->[unknown](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/unknown.ts)
+>[unknown.ts](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/unknown.ts)
 - any 보다 Type-safe한 타입
   - any와 같이 아무거나 할당할 수 있다.
   - 컴파일러가 타입을 추론할 수 있게끔 타입의 유형을 좁히거나 타입을 확정해주지 않으면 다른곳에 할당할 수 없고 사용할 수 없다.
 - unknown 타입을 사용하면 runtime error를 줄일 수 있다.
 - 모르는 변수의 타입을 묘사해야할 수도 있다.
   - 이 경우 컴파일러와 미래의 코드를 읽는 사람에게 이 변수가 무엇이든 될 수 있음을 알려주는 타입을 제공하기를 원하므로 unknown 타입을 제공한다.
+
+___
+## never
+>[never.ts]()
+
+- never 타입은 모든 타입의 subtype이며 모든 타입에 할당할 수 있다.
+- 하지만 never에는 어떤것도 할당할 수 없다.
+- any 조차도 never에게 할당할 수 없다.
+- 잘못된 타입을 넣는 실수를 막고자 할 때 사용하기도 한다.
+___
+## void
+>[void.ts]()
+- 어떤 타입도 가지지 않는 빈 상태
+- 일반적으로 변수에다가 사용하지 않고 값을 반환하지 않는 undefined 리턴 할 때 사용한다.
+- JavaScript/TypeScript에서는 undefiend라는 값이 있기 때문에 잘 사용하지 않는다.
+___
+## 타입 시스템
+- 컴파일러에게 사용하는 타입을 명시적으로 지정하는 시스템
+- 컴파일러가 자동으로 타입을 추론하는 시스템
+  
+### 타입 스크립트의 타입 시스템
+- 타입을 명시적으로 지정할 수 있다.
+- 타입을 명시적으로 지정하지 않으면, 타입스크립트 컴파일러가 자동으로 타입을 추론
+- noImplicitAny 옵션
+  - 타입을 명시적으로 지정하지 않은 경우 타입스크립트가 추론 중 'any'라고 판단하게 되면, 컴파일 에러를 발생시켜 명시적으로 지정도하도록 유도한다.
+- strictNullChecks 옵션
+  - 모든 타입에 자동으로 포함되어 있는 'null'과 'undefined'를 제거해줍니다.
+- noImplicitReturns 옵션
+  - 함수 내에서 모든 코드가 값을 리턴하지 않으면 컴파일 에러를 발생시킨다.
