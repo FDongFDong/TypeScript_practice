@@ -30,6 +30,9 @@
     - [extends](#extends)
     - [files, include, exclude](#files-include-exclude)
     - [compileOptions - typeRoots, types](#compileoptions---typeroots-types)
+    - [compileOptions - target, lib](#compileoptions---target-lib)
+    - [compileOptions - outDir, outFile, rootDir](#compileoptions---outdir-outfile-rootdir)
+    - [compileOptions - strict](#compileoptions---strict)
 ___
 ## Type Annotation
 > [type_annotation.ts](https://github.com/FDongFDong/typescript_practice/blob/main/type_annotation/test.ts)
@@ -325,3 +328,54 @@ ___
     - 배열 안의 모듈 혹은 ./node_modules/@types/ 안의 모듈 이름에서 찾아온다.
     - [] 빈 배열을 넣는다는 것은 이 시스템을 사용하지 않겠다는 의미
   - typeRoots와 types를 같이 사용하지 않는다.
+  
+### compileOptions - target, lib
+- target
+  - 빌드를 어떤 버전으로 할것인지
+  - 지정하지 않으면 es3
+- lib
+  - 기본 type definition 라이브러리를 어떤 것을 사용할 것인지
+  - lib를 지정하지 않을 때
+    - target이 'es3'이고 디폴트로 lib.d.ts를 사용한다
+    - target이 'es5'이면 디폴트로 dom, es5, scripthost를 사용한다
+    - target이 'es6'이면 디폴트로 dom, es6, dom.iterable, scripthost를 사용한다.
+  - lib를 지정하면 그 lib 배열로만 라이브러리를 사용한다.
+    - 빈 [] => 'no definition found ...'
+
+### compileOptions - outDir, outFile, rootDir
+- outDir
+  - 설정한 파일 경로로 컴파일된 결과물이 나온다.
+- outFile
+- rootDir
+  - 타입스크립트 파일의 가장 상단 기준으로 컴파일하여 결과물이 계층적으로 출력된다.
+
+### compileOptions - strict
+- 모든 type을 checking 한다.
+  - --noImplicitAny
+    - 명시적이지 않게 any 타입을 사용하여, 표현식과 선언에 사용하면 에러를 발생
+    - 타입스크립트가 추론을 실패한 경우 any가 맞으면 any라고 지정
+    - 아무것도 쓰지 않으면 에러를 발생
+    - 이 오류를 해결하면 any라고 지정되어 있지 않은 경우는 any가 아닌것
+  - --noImplicitThis
+    - 명시적이지 않게 any 타입을 사용하여 this 표현식에 사용하면 에러를 발생시킨다.
+     ```typescript
+      function noImplicitThisTestFunc(this, name: string, age: number){
+        this.name = name;
+        this.age = age;
+        return this;
+      }
+     ```
+     - 첫번째 매개변수 자리에 this를 놓고 this에 대한 타입을 어떤것이라도 표현하지 않으면 오류를 발생시킨다.
+     - Javascript에서는 매개변수에 this를 넣으면 이미 예약된 키워드라 SyntaxError을 발생시킨다.
+     - call / apply / bind와 같이 this를 대체하여 함수 콜을 하는 용도로 사용
+     - this를 any로 명시적으로 지정하는 것은 합리적이다.
+  - --strictNullChecks
+    - null 및 undefined 값이 모든 유형의 도메인에 속하지 않으며, 그 자신을 타입으로 가지거나 any일 경우에만 할당이 가능
+    - undefined에 void 할당 가능
+    - 적용하지 않으면
+      - 모든 타입은 null, undefined 값을 가질 수 있다.
+      - string 타입을 지정해도 null 혹은 undefined 값을 할당할 수 있다.
+  - --strictFunctionTypes
+  - --strictPropertyInitialization
+  - --strictBindCallApply
+  - --alwaysStrict
