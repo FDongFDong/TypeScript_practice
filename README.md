@@ -25,6 +25,11 @@
     - [Aliasing Union Type](#aliasing-union-type)
     - [Aliasing Tuple](#aliasing-tuple)
     - [Aliasing Function](#aliasing-function)
+  - [Compilation Context](#compilation-context)
+    - [compileOnSave](#compileonsave)
+    - [extends](#extends)
+    - [files, include, exclude](#files-include-exclude)
+    - [compileOptions - typeRoots, types](#compileoptions---typeroots-types)
 ___
 ## Type Annotation
 > [type_annotation.ts](https://github.com/FDongFDong/typescript_practice/blob/main/type_annotation/test.ts)
@@ -263,3 +268,60 @@ ___
 ```typescript
   type EatType = (food: string) => void;
 ```
+
+___
+## Compilation Context
+
+### compileOnSave
+- true / false (default false)
+- vs2015 / TypeScript 1.8.4 이상이 저장 시 컴파일 시켜준다.
+- tsconfig.json
+  ```json
+    {
+      "compileOnSave": true,
+    }
+  ```
+### extends
+- 다른 파일을 상속받거나 추가해서 사용할 때
+- 파일(상대) 경로명: string
+- tsconfig.json
+  ```json
+  {
+    "extends": "./base.json",
+  }
+  ```
+- base.json
+  ```json
+  {
+    "compilerOptions" :{
+      "strict" : true
+    }
+  }
+  ```
+
+### files, include, exclude
+- 어떤 파일, 디렉터리를 컴파일 할 것인지를 정하는 설정
+- files, include 속성이 tsconfig안에 없으면 모든 파일을 컴파일하려한다.
+- files
+  - 상대/절대 경로의 리스트 배열
+  - exclude 보다 강하기 때문에 exclude로 설정한 파일도 무시한다.
+- include, exclude
+  - glob 패턴
+  - include
+    - exclude보다 약하다
+  - exclude
+    - 설정 안하면 4가지(node_modules, bower_components, jspm_packages, \<outDir>)를 default로 제외한다.
+    - \<outDir>은 항상 제외한다.
+
+### compileOptions - typeRoots, types
+
+- @types
+  - 내장 type definition 시스템
+  - 설정을 하지 않으면
+    - node_modules/@types 라는 모든 경로를 찾아서 사용
+  - typeRoots를 사용하면
+    - 배열 안에 들어있는 경로들 아래서만 가져온다
+  - types를 사용하면
+    - 배열 안의 모듈 혹은 ./node_modules/@types/ 안의 모듈 이름에서 찾아온다.
+    - [] 빈 배열을 넣는다는 것은 이 시스템을 사용하지 않겠다는 의미
+  - typeRoots와 types를 같이 사용하지 않는다.
