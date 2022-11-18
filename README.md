@@ -16,7 +16,7 @@
   - [unknown](#unknown)
 ___
 ## Type Annotation
-> (type_annotation.ts)[https://github.com/FDongFDong/typescript_practice/blob/main/type_annotation/test.ts]
+> [type_annotation.ts](https://github.com/FDongFDong/typescript_practice/blob/main/type_annotation/test.ts)
 
 타입을 지정해주는 것
 - : {type}
@@ -50,16 +50,16 @@ ___
 TypeScript의 Primitive Type은 모두 소문자이다.
 
 ### boolean
-> (boolean.ts)[https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/boolean.ts]
+> [boolean.ts](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/boolean.ts)
 ### number 
-> (number.ts)[https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/number.ts]
+> [number.ts](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/number.ts)
 - 모든 숫자는 부동 소수점 값
 - 16진수 2진수 8진수 모두 지원
 - NaN 지원
 - 1_000_000 
 
 ### string
-> (string.ts)[https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/string.ts]
+> [string.ts](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/string.ts)
 - string 형식 사용
 - 큰따옴표, 작은따옴표
 
@@ -69,7 +69,7 @@ Template String
 - `${expr}
 
 ### symbol
-> (symbol.ts)[https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/symbol.ts]
+> [symbol.ts](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/symbol.ts)
 
 - ECMAScript 2015의 symbol
 - new Symbol로 사용할 수 없다
@@ -79,7 +79,7 @@ Template String
 - 주로 접근 제어하는데 많이 쓰인다.
 
 ### Undefined & Null
-> (null.ts)[https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/null.ts]
+> [null.ts](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/null.ts)
 
 - undefined와 null은 각각 undifiend 및 null을 가진다.
 - void와 마찬가지로 그자체로는 유용하지 않다.
@@ -100,18 +100,18 @@ Template String
     - 런타임에서 typeof 연산자를 이용해서 알아내면 undefined이다.
 ___
 ## object
-> (object.ts)[https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/object.ts]
+> [object.ts](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/object.ts)
 
 - primitive type이 아닌 것을 나타내고 싶을 때 사용하는 타입
 - object literal
   ```javascript
   const person1 = {name: 'FDong', age: 30};
-  // person1은 object 타입이 아니다.(타입스크립트 기준)
+  // person1은 object 타입이 아니다.[타입스크립트 기준]
   // person1은 "{name: 'FDong', age: 30}" 타입이다.
   ```
 
 ## Array
-> (Array.ts)[https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/array.ts]
+> [Array.ts](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/array.ts)
 - JavaScript에서 객체
 - 사용방법
   - Array\<Type>
@@ -119,11 +119,11 @@ ___
 
 ___
 ## tuple
-> (tuple.ts)[https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/tuple.ts]
+> [tuple.ts](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/tuple.ts)
 - 순서, 타입, 길이가 정해져 있다.
 ___
 ## any
-> (any)[https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/any.ts]
+> [any](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/any.ts)
 
 - 어떤 타입이여도 상관이 없다.
 - 최대한 쓰지 않아야한다.
@@ -135,7 +135,7 @@ ___
 ___
 
 ## unknown
->(unknown)[https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/unknown.ts]
+>[unknown](https://github.com/FDongFDong/typescript_practice/blob/main/basic-types/unknown.ts)
 - any 보다 Type-safe한 타입
   - any와 같이 아무거나 할당할 수 있다.
   - 컴파일러가 타입을 추론할 수 있게끔 타입의 유형을 좁히거나 타입을 확정해주지 않으면 다른곳에 할당할 수 없고 사용할 수 없다.
