@@ -18,6 +18,13 @@
   - [void](#void)
   - [타입 시스템](#타입-시스템)
     - [타입 스크립트의 타입 시스템](#타입-스크립트의-타입-시스템)
+  - [Structural Type System, Nominal Type System](#structural-type-system-nominal-type-system)
+  - [Type Compatibility](#type-compatibility)
+  - [Type Alias](#type-alias)
+    - [Aliasing Primitive](#aliasing-primitive)
+    - [Aliasing Union Type](#aliasing-union-type)
+    - [Aliasing Tuple](#aliasing-tuple)
+    - [Aliasing Function](#aliasing-function)
 ___
 ## Type Annotation
 > [type_annotation.ts](https://github.com/FDongFDong/typescript_practice/blob/main/type_annotation/test.ts)
@@ -175,3 +182,84 @@ ___
   - 모든 타입에 자동으로 포함되어 있는 'null'과 'undefined'를 제거해줍니다.
 - noImplicitReturns 옵션
   - 함수 내에서 모든 코드가 값을 리턴하지 않으면 컴파일 에러를 발생시킨다.
+___
+## Structural Type System, Nominal Type System
+
+- Structural Type System(TypeScript)
+  - 구조가 같으면 같은 타입이다.
+
+- Nominal Type System
+  - 구조가 같아도 이름이 다르면 다른 타입이다.
+
+___ 
+## Type Compatibility
+
+
+- 같거나 서브 타입인 경우 할당이 가능하다. -> 공변
+- 함수의 매개변수 타입만 같거나 슈퍼타입인 경우, 할당이 가능하다 -> 반경
+  ```typescript
+  let sub_type1: 1 = 1;
+  let super_type1: number = sub_type1;
+  // sub_type1 = super_type1; // Error
+
+  let sub_type2: number[] = [1];
+  let super_type2: object = sub_type2; // sub_type2는 Array이다. Array도 object이기 때문에 가능
+  // sub_type2 = super_type2; //Error
+
+  let sub_type3: [number, number] = [1, 2]; // tuple
+  let super_type3: number[] = sub_type3;
+  // sub_type3 = super_type3; // Error
+
+  let sub_type4: number = 1;
+  let super_type4: any = sub_type4;
+  sub_type4 = super_type4; // any는 에러를 발생시키지 않고 아무거나 할당가능
+
+  let sub_type5: never = 0 as never;
+  let super_type5: number = sub_type5;
+  // sub_type5 = super_type5; // Error
+
+  class Animal {}
+  class Dog extends Animal {
+    eat() {}
+  }
+
+  let sub_type6: Dog = new Dog();
+  let super_type6: Animal = sub_type6;
+  // sub_type6 = super_type6; // Error
+  ```
+
+## Type Alias
+- Interface랑 비슷하지만 다르다
+- 기타 직접 작성해야하는 타입을 다른 이름으로 지정할 수 있다.
+- 만들어진 타입의 refer로 사용하는 것이지 타입을 만드는 것은 아니다.
+
+### Aliasing Primitive
+```typescript
+  type MyStingType = string;
+  const str = 'world';
+  let myStr: MyStingType = 'Hello';
+  myStr = str;
+```
+
+### Aliasing Union Type
+```typescript
+  let person: string | number = 0;
+  person = 'FDong';
+
+  type StringOrNumber = string | number;
+
+  let another: StringOrNumber = 0;
+  another = "DongDong"
+```
+
+### Aliasing Tuple
+```typescript
+  let person: [string, number] = ['FDong', 30];
+  type PersonTuple = [string, number];
+  let another: PersonTuple = ['FDong', 30];
+```
+
+### Aliasing Function
+```typescript
+  type EatType = (food: string) => void;
+```
