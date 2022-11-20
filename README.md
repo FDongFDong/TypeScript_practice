@@ -1,6 +1,5 @@
 # typescript_practice
 
-- [typescript_practice](#typescript_practice)
   - [Type Annotation](#type-annotation)
   - [Type](#type)
   - [Primitive Type](#primitive-type)
