@@ -234,7 +234,7 @@ ___
   let super_type6: Animal = sub_type6;
   // sub_type6 = super_type6; // Error
   ```
-
+___
 ## Type Alias
 - Interface랑 비슷하지만 다르다
 - 기타 직접 작성해야하는 타입을 다른 이름으로 지정할 수 있다.
@@ -374,7 +374,17 @@ ___
     - 적용하지 않으면
       - 모든 타입은 null, undefined 값을 가질 수 있다.
       - string 타입을 지정해도 null 혹은 undefined 값을 할당할 수 있다.
+    - 적용하면 
+      - 모든 타입은 null, undefined 값을 가질 수 없고, 가지려면 union type을 이용해서 직접 명시해야 한다.
+      - any 타입은 null과 undefined를 가진다. 
   - --strictFunctionTypes
   - --strictPropertyInitialization
+    - 정의도지 않은 클래스의 속성이 생성자에서 초기화되었는지 확인한다.
   - --strictBindCallApply
+    - bind, call, apply에 대한 더 엄격한 검사 수행
   - --alwaysStrict
+___
+## Interface
+
+타입을 만들어내는 방식
+
