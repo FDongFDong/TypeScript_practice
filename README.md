@@ -32,6 +32,27 @@
     - [compileOptions - target, lib](#compileoptions---target-lib)
     - [compileOptions - outDir, outFile, rootDir](#compileoptions---outdir-outfile-rootdir)
     - [compileOptions - strict](#compileoptions---strict)
+  - [Interface](#interface)
+    - [optional property1](#optional-property1)
+    - [optional property2](#optional-property2)
+    - [function in interface](#function-in-interface)
+    - [class implements interface](#class-implements-interface)
+    - [interface extends interface](#interface-extends-interface)
+    - [function interface](#function-interface)
+    - [Readonly interface Properties](#readonly-interface-properties)
+    - [type alias vs interface](#type-alias-vs-interface)
+  - [Class](#class)
+    - [constructor & initialize](#constructor-initialize)
+    - [접근 제어자](#접근-제어자)
+    - [initialization in constructor parameters](#initialization-in-constructor-parameters)
+    - [Getters, Setters](#getters-setters)
+    - [readonly properties](#readonly-properties)
+    - [index signatures in class](#index-signatures-in-class)
+    - [static properties & methods](#static-properties-methods)
+    - [singletons](#singletons)
+    - [상속](#상속)
+    - [abstract classes](#abstract-classes)
+
 ___
 ## Type Annotation
 > [type_annotation.ts](https://github.com/FDongFDong/typescript_practice/blob/main/type_annotation/test.ts)
@@ -342,6 +363,7 @@ ___
     - 빈 [] => 'no definition found ...'
 
 ### compileOptions - outDir, outFile, rootDir
+
 - outDir
   - 설정한 파일 경로로 컴파일된 결과물이 나온다.
 - outFile
@@ -349,6 +371,7 @@ ___
   - 타입스크립트 파일의 가장 상단 기준으로 컴파일하여 결과물이 계층적으로 출력된다.
 
 ### compileOptions - strict
+
 - 모든 type을 checking 한다.
   - --noImplicitAny
     - 명시적이지 않게 any 타입을 사용하여, 표현식과 선언에 사용하면 에러를 발생
@@ -357,6 +380,7 @@ ___
     - 이 오류를 해결하면 any라고 지정되어 있지 않은 경우는 any가 아닌것
   - --noImplicitThis
     - 명시적이지 않게 any 타입을 사용하여 this 표현식에 사용하면 에러를 발생시킨다.
+  
      ```typescript
       function noImplicitThisTestFunc(this, name: string, age: number){
         this.name = name;
@@ -364,6 +388,7 @@ ___
         return this;
       }
      ```
+    
      - 첫번째 매개변수 자리에 this를 놓고 this에 대한 타입을 어떤것이라도 표현하지 않으면 오류를 발생시킨다.
      - Javascript에서는 매개변수에 this를 넣으면 이미 예약된 키워드라 SyntaxError을 발생시킨다.
      - call / apply / bind와 같이 this를 대체하여 함수 콜을 하는 용도로 사용
@@ -383,13 +408,17 @@ ___
   - --strictBindCallApply
     - bind, call, apply에 대한 더 엄격한 검사 수행
   - --alwaysStrict
+  
 ___
+
 ## Interface
+
 > [interface1.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface1.js)
 
 타입을 만들어내는 방식
 
 ### optional property1
+
 > [interface2.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface2.js)
 
 ```typescript
@@ -401,25 +430,33 @@ ___
 ```
 
 ### optional property2
+
 > [interface3.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface3.js) 
 
 ### function in interface
+
 > [interface4.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface4.js)
 
 ### class implements interface
+
 > [interface5.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface5.js)
 
 ### interface extends interface
+
 > [interface6.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface6.js)
 
 ### function interface
+
 > [interface7.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface7.js)
 
-### Readonly interface Properties
+### readonly interface Properties
+
 > [interface8.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface8.js)
 
 ### type alias vs interface
+
 - function
+
   ```typescript
     // type alias
     type EatType = (food: string) => void;
@@ -429,7 +466,9 @@ ___
       (food: string): void;
     }
   ```
+
 - array
+
   ```typescript
     // type alias
     type PersonList = string[];
@@ -439,7 +478,9 @@ ___
       [index: number]: string;
     }
   ```
+
 - intersection
+
   ```typescript
     interface ErrorHandling {
       success: boolean;
@@ -459,7 +500,9 @@ ___
     let art: ArtistsResponseType;
     let iar: IArtistsResponse;
   ```
+
 - union types
+
   ```typescript
     interface Bird {
       fly(): void;
@@ -476,6 +519,7 @@ ___
     class Pet implements PetType {} // Error
   ```
 - Interface - Declaration Merging
+
   ```typescript
     interface MergingInterface {
       a : string;
@@ -489,7 +533,9 @@ ___
   ```
 ___
 ## Class
+
 > [example.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example.js)
+
 - object를 만드는 blueprint
 - TypeScript에서는 클래스도 사용자가 만드는 타입의 하나
 - class 키워드를 이용하여 클래스를 만들 수 있다.
@@ -499,8 +545,10 @@ ___
 - this를 이용해서 만들어진 object를 가리킬 수 있다.
 - JS로 컴파일 시 es5의 경우 function으로 변경된다.
 
-### constructor & initialize
+### constructor, initialize
+
 > [exampe2.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example2.js)
+
 - 생성자에 async를 쓸 수 없다.
 - 생성자 함수가 없으면 디폴트 생성자가 불린다.
 - 생성자가 하나라도 있으면 디폴트 생성자는 사라진다.
@@ -510,6 +558,7 @@ ___
 
 ### 접근 제어자
 >[example3.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example3.js)
+
 - public, private, protected가 있다.
 - 설정하지 않으면 public
 - 클래스 내부의 모든 곳에 설정 가능하다.
@@ -519,7 +568,7 @@ ___
 ### initialization in constructor parameters
 > [example4.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example4.js)
 
-### Getters & Setters
+### getters, setters
 > [example5.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example5.js)
 
 ### readonly properties
@@ -529,7 +578,7 @@ ___
 ### index signatures in class
 > [example7.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example7.js)
 - 동적으로 properties가 들어오는 경우 고려해볼맘ㄴ하다.
-### static properties & methods
+### static properties, methods
 > [example8.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example8.js)
 ### singletons
 > [example9.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example9.js)
