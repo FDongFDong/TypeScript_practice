@@ -1,5 +1,6 @@
 # typescript_practice
 
+- [typescript\_practice](#typescript_practice)
   - [Type Annotation](#type-annotation)
   - [Type](#type)
   - [Primitive Type](#primitive-type)
@@ -7,7 +8,7 @@
     - [number](#number)
     - [string](#string)
     - [symbol](#symbol)
-    - [Undefined & Null](#undefined--null)
+    - [Undefined \& Null](#undefined--null)
   - [object](#object)
   - [Array](#array)
   - [tuple](#tuple)
@@ -39,24 +40,24 @@
     - [class implements interface](#class-implements-interface)
     - [interface extends interface](#interface-extends-interface)
     - [function interface](#function-interface)
-    - [Readonly interface Properties](#readonly-interface-properties)
+    - [readonly interface Properties](#readonly-interface-properties)
     - [type alias vs interface](#type-alias-vs-interface)
   - [Class](#class)
-    - [constructor & initialize](#constructor-initialize)
+    - [constructor, initialize](#constructor-initialize)
     - [접근 제어자](#접근-제어자)
     - [initialization in constructor parameters](#initialization-in-constructor-parameters)
-    - [Getters, Setters](#getters-setters)
+    - [getters, setters](#getters-setters)
     - [readonly properties](#readonly-properties)
     - [index signatures in class](#index-signatures-in-class)
-    - [static properties & methods](#static-properties-methods)
+    - [static properties, methods](#static-properties-methods)
     - [singletons](#singletons)
     - [상속](#상속)
     - [abstract classes](#abstract-classes)
- - [Generic](#generic)
+  - [Generic](#generic)
     - [generic Array, Tuple](#generic-array-tuple)
     - [generic Function](#generic-function)
-    - [generic class](#generic-class)
-    - [generic-with-extends](#generic-with-extends)
+    - [generic Class](#generic-class)
+    - [generic with extends](#generic-with-extends)
   
 ___
 ## Type Annotation
@@ -610,5 +611,5 @@ ___
 >[generic5.ts](https://github.com/FDongFDong/typescript_practice/blob/main/generic/generic5.ts)
 
 ### generic with extends
->[generic6.ts]<https://github.com/FDongFDong/typescript_practice/blob/main/generic/generic6.ts>
+>[generic6.ts](https://github.com/FDongFDong/typescript_practice/blob/main/generic/generic6.ts)
 
