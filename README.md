@@ -385,6 +385,110 @@ ___
   - --alwaysStrict
 ___
 ## Interface
+> [interface1.ts]()
 
 타입을 만들어내는 방식
+
+### optional property1
+> [interface2.ts]()
+
+```typescript
+  // name은 항상 있고 age는 있을수도 없을수도 있는 형태
+  interface Person2 {
+    name: string;
+    age?: number;
+  }
+```
+
+### optional property2
+> [interface3.ts]() 
+
+### function in interface
+> [interface4.ts]()
+
+### class implements interface
+> [interface5.ts]()
+
+### interface extends interface
+> [interface6.ts]()
+
+### function interface
+> [interface7.ts]()
+
+### Readonly interface Properties
+> [interface8.ts]()
+
+### type alias vs interface
+- function
+  ```typescript
+    // type alias
+    type EatType = (food: string) => void;
+
+    // interface
+    interface IEat {
+      (food: string): void;
+    }
+  ```
+- array
+  ```typescript
+    // type alias
+    type PersonList = string[];
+
+    // interface
+    interface IPersonList {
+      [index: number]: string;
+    }
+  ```
+- intersection
+  ```typescript
+    interface ErrorHandling {
+      success: boolean;
+      error?: {message: string};
+    }
+
+    interface ArtistsData {
+      artists: {name: string}[];
+    }
+
+    // type alias
+    type ArtistsResponseType = ArtistsData & ErrorHandling;
+
+    // interface
+    interface IArtistsResponse extends ArtistsData, ErrorHandling {}
+
+    let art: ArtistsResponseType;
+    let iar: IArtistsResponse;
+  ```
+- union types
+  ```typescript
+    interface Bird {
+      fly(): void;
+      layEggs(): void;
+    }
+    interface Fish {
+      swim(): void;
+      layEggs(): void;
+    }
+
+    type PetType = Bird | Fish;
+
+    interface IPet extends PetType{} // Error
+    class Pet implements PetType {} // Error
+  ```
+- Interface - Declaration Merging
+  ```typescript
+    interface MergingInterface {
+      a : string;
+    }
+    interface MergingInterface {
+      b: string;
+    }
+    // 선언이 합쳐친다.
+    let mi: MergingInterface;
+    
+  ```
+___
+## Class
+- object를 만드는 blueprint
+- TypeScript에서는 클래스도 사용자가 만드는 타입의 하나
 
