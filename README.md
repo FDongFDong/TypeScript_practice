@@ -385,12 +385,12 @@ ___
   - --alwaysStrict
 ___
 ## Interface
-> [interface1.ts]()
+> [interface1.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface1.js)
 
 타입을 만들어내는 방식
 
 ### optional property1
-> [interface2.ts]()
+> [interface2.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface2.js)
 
 ```typescript
   // name은 항상 있고 age는 있을수도 없을수도 있는 형태
@@ -401,22 +401,22 @@ ___
 ```
 
 ### optional property2
-> [interface3.ts]() 
+> [interface3.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface3.js) 
 
 ### function in interface
-> [interface4.ts]()
+> [interface4.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface4.js)
 
 ### class implements interface
-> [interface5.ts]()
+> [interface5.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface5.js)
 
 ### interface extends interface
-> [interface6.ts]()
+> [interface6.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface6.js)
 
 ### function interface
-> [interface7.ts]()
+> [interface7.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface7.js)
 
 ### Readonly interface Properties
-> [interface8.ts]()
+> [interface8.ts](https://github.com/FDongFDong/typescript_practice/blob/main/interface/interface8.js)
 
 ### type alias vs interface
 - function
@@ -489,7 +489,7 @@ ___
   ```
 ___
 ## Class
-> [example.ts]()
+> [example.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example.js)
 - object를 만드는 blueprint
 - TypeScript에서는 클래스도 사용자가 만드는 타입의 하나
 - class 키워드를 이용하여 클래스를 만들 수 있다.
@@ -500,7 +500,7 @@ ___
 - JS로 컴파일 시 es5의 경우 function으로 변경된다.
 
 ### constructor & initialize
-> [exampe2.ts]()
+> [exampe2.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example2.js)
 - 생성자에 async를 쓸 수 없다.
 - 생성자 함수가 없으면 디폴트 생성자가 불린다.
 - 생성자가 하나라도 있으면 디폴트 생성자는 사라진다.
@@ -509,7 +509,7 @@ ___
 - 클래스의 프로퍼티가 정의되어 있지만, 값을 대입하지 않으면 undefined이다.
 
 ### 접근 제어자
->[example3.ts]()
+>[example3.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example3.js)
 - public, private, protected가 있다.
 - 설정하지 않으면 public
 - 클래스 내부의 모든 곳에 설정 가능하다.
@@ -517,27 +517,27 @@ ___
 - 자바스크립트에서는 private를 지원하지 않아 프로퍼티나 메서드 이름앞에 _를  붙여서 표현했다. 
 
 ### initialization in constructor parameters
-> [example4.ts]()
+> [example4.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example4.js)
 
 ### Getters & Setters
-> [example5.ts]()
+> [example5.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example5.js)
 
 ### readonly properties
-> [example6.ts]()
+> [example6.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example6.js)
 - readonly가 설정되면 내부 외부에서 모두 수정할 수 없다.
 
 ### index signatures in class
-> [example7.ts]
+> [example7.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example7.js)
 - 동적으로 properties가 들어오는 경우 고려해볼맘ㄴ하다.
 ### static properties & methods
-> [example8.ts]
+> [example8.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example8.js)
 ### singletons
-> [example9.ts]
+> [example9.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example9.js)
 
 ### 상속
-> [example10.ts]
+> [example10.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example10.js)
 
 ### abstract classes
-> [example11.ts]
+> [example11.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example11.js)
 
 ___
