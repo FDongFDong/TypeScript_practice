@@ -590,3 +590,20 @@ ___
 > [example11.ts](https://github.com/FDongFDong/typescript_practice/blob/main/class/example11.js)
 
 ___
+
+## Generic
+>[generic1.ts]()
+>[generic2.ts]()
+
+### generic Array, Tuple
+>[generic3.ts]()
+
+### generic Function
+>[generic4.ts]
+
+### generic class
+>[generic5.ts]
+
+### generic with extends
+>[generic6.ts]
+
