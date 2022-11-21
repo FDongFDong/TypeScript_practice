@@ -52,7 +52,12 @@
     - [singletons](#singletons)
     - [상속](#상속)
     - [abstract classes](#abstract-classes)
-
+ - [Generic](#generic)
+    - [generic Array, Tuple](#generic-array-tuple)
+    - [generic Function](#generic-function)
+    - [generic class](#generic-class)
+    - [generic-with-extends](#generic-with-extends)
+  
 ___
 ## Type Annotation
 > [type_annotation.ts](https://github.com/FDongFDong/typescript_practice/blob/main/type_annotation/test.ts)
@@ -592,18 +597,18 @@ ___
 ___
 
 ## Generic
->[generic1.ts]()
->[generic2.ts]()
+>[generic1.ts](https://github.com/FDongFDong/typescript_practice/blob/main/generic/generic1.ts)
+>[generic2.ts](https://github.com/FDongFDong/typescript_practice/blob/main/generic/generic2.ts)
 
 ### generic Array, Tuple
->[generic3.ts]()
+>[generic3.ts](https://github.com/FDongFDong/typescript_practice/blob/main/generic/generic3.ts)
 
 ### generic Function
->[generic4.ts]
+>[generic4.ts](https://github.com/FDongFDong/typescript_practice/blob/main/generic/generic4.ts)
 
-### generic class
->[generic5.ts]
+### generic Class
+>[generic5.ts](https://github.com/FDongFDong/typescript_practice/blob/main/generic/generic5.ts)
 
 ### generic with extends
->[generic6.ts]
+>[generic6.ts]<https://github.com/FDongFDong/typescript_practice/blob/main/generic/generic6.ts>
 
