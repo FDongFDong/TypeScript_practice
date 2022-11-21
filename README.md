@@ -489,6 +489,55 @@ ___
   ```
 ___
 ## Class
+> [example.ts]()
 - object를 만드는 blueprint
 - TypeScript에서는 클래스도 사용자가 만드는 타입의 하나
+- class 키워드를 이용하여 클래스를 만들 수 있다.
+- class 이름은 보통 대문자를 이용한다.
+- new를 이용하여 class를 통해 object를 만들 수 있다.
+- constructor를 이용하여 object를 생성하면서 값을 전달할 수 있다.
+- this를 이용해서 만들어진 object를 가리킬 수 있다.
+- JS로 컴파일 시 es5의 경우 function으로 변경된다.
 
+### constructor & initialize
+> [exampe2.ts]()
+- 생성자에 async를 쓸 수 없다.
+- 생성자 함수가 없으면 디폴트 생성자가 불린다.
+- 생성자가 하나라도 있으면 디폴트 생성자는 사라진다.
+- strict 모드에서는 프로퍼티를 선언하는 곳 또는 생성자에서 값을 할당해야 한다.
+- 프로퍼티를 선언하는 곳 또는 생성자에서 값을 할당하지 않는 경우에는 !를 붙여서 위험을 표현한다.
+- 클래스의 프로퍼티가 정의되어 있지만, 값을 대입하지 않으면 undefined이다.
+
+### 접근 제어자
+>[example3.ts]()
+- public, private, protected가 있다.
+- 설정하지 않으면 public
+- 클래스 내부의 모든 곳에 설정 가능하다.
+- private으로 설정하면 클래스 외부에서 접근불가능
+- 자바스크립트에서는 private를 지원하지 않아 프로퍼티나 메서드 이름앞에 _를  붙여서 표현했다. 
+
+### initialization in constructor parameters
+> [example4.ts]()
+
+### Getters & Setters
+> [example5.ts]()
+
+### readonly properties
+> [example6.ts]()
+- readonly가 설정되면 내부 외부에서 모두 수정할 수 없다.
+
+### index signatures in class
+> [example7.ts]
+- 동적으로 properties가 들어오는 경우 고려해볼맘ㄴ하다.
+### static properties & methods
+> [example8.ts]
+### singletons
+> [example9.ts]
+
+### 상속
+> [example10.ts]
+
+### abstract classes
+> [example11.ts]
+
+___
